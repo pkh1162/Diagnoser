@@ -152,8 +152,8 @@ authController.logout = (req, res) => {
     */
     dbModels.User.findOneAndUpdate({_id: req.session.passport.user.userID}, {$set: {status: "inactive"}})
     .then(() => {
-        req.session={};
         req.logout();
+        req.session={};
         res.status(200).json({
             success: true,
             userSession  : false,
