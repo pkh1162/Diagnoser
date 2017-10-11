@@ -48,7 +48,7 @@ store.on("error", (err) => {
 //Logger middleware function////////////
 
 let logger = (req, res, next) => {
-   // console.log("logging: ");
+    //console.log("logging: ", req.session.passport);
     next();
 }
 ////////////////////////////////////////////////////////////////////

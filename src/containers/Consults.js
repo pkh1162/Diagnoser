@@ -10,9 +10,6 @@ import ChatBubble from "./ChatBubble.js";
 import {openClose, alterChannel, clearMessages, addMessage, initBubble, initRoom, fakeConnect} from "../actions/chatBubbleActions.js";
 
 const io = require("socket.io-client");
-const socket = io();    //---prod
-//let socket = io.connect("http://localhost:3001"); //---dev
-
 
 
 class Consults extends React.Component {
@@ -36,7 +33,11 @@ class Consults extends React.Component {
     }
 
     componentWillMount() {
-        this.props.getDoctors();        
+        this.props.getDoctors();
+        
+        const socket = io();    //---prod
+        //const socket = io.connect("http://localhost:3001"); //---dev
+
         this.setState({
             socket
         })

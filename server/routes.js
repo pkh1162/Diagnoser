@@ -29,8 +29,9 @@ routes.get('/auth/githubSignIn',
   passport.authenticate('github', { failureRedirect: '/signingIn' }),
   function(req, res, next) {
     // Successful authentication, redirect home.
-    
-    res.redirect('https://diagnoser.herokuapp.com');    // ---production
+    console.log("in github auth:")
+    res.redirect('/')
+    //res.redirect('https://diagnoser.herokuapp.com');    // ---production
     //res.redirect("/") ---dev
     //next()
   }, authController.authCheck);
@@ -43,13 +44,20 @@ routes.get('/auth/githubSignIn',
 
 routes.get('/slackAuth', passport.authenticate('slack', {session: true}));
 routes.get('/auth/slackSignIn', passport.authenticate('slack', { failureRedirect: '/signingIn' }),
-(req, res) => res.redirect('https://diagnoser.herokuapp.com')
+(req, res) => {
+
+    res.redirect('/')
+    //res.redirect('https://diagnoser.herokuapp.com')
+}
 );
 
 
 routes.get('/googleAuth', passport.authenticate('google', {scope: ['profile', "email"], session: true}));
 routes.get('/auth/googleSignIn', passport.authenticate('google', { failureRedirect: '/signingIn' }),
-(req, res) => res.redirect('/')
+(req, res) => {
+    res.redirect('/')
+    //res.redirect('https://diagnoser.herokuapp.com')
+}
 );
 
 

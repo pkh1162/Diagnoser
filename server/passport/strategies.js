@@ -77,7 +77,7 @@ passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
     callbackURL: "https://diagnoser.herokuapp.com/api/auth/githubSignIn"   //---production
-    //callbackURL: "http://localhost:3000/api/auth/githubSignIn"             ---dev
+    //callbackURL: "http://localhost:3000/api/auth/githubSignIn"            // ---dev
   },
   function(accessToken, refreshToken, profile, done) {
 
@@ -104,6 +104,7 @@ passport.use(new SlackStrategy({
     clientID: process.env.SLACK_CLIENT_ID,
     clientSecret: process.env.SLACK_CLIENT_SECRET,
     callbackURL: "https://diagnoser.herokuapp.com/api/auth/slackSignIn"
+    //callbackURL: "http://localhost:3000/api/auth/slackSignIn"            // ---dev
 }, (accessToken, refreshToken, profile, done) => {
 
         profileObj = {
@@ -154,7 +155,7 @@ passport.use(new GoogleStrategy({
 
 passport.serializeUser(function(user, done) {
     //takes in user data from person sigining in and passes on the specific data which needs to be saved to their session.
-    
+    //console.log("serialising user: ", user)
     let sessionData = {
         userID: user._id,
         privilege: user.privilege,
@@ -167,5 +168,6 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(user, done) {
+    //console.log("deserialising user: ", user)
     done(null, user);  
 });
