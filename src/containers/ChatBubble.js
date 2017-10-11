@@ -97,6 +97,7 @@ class ChatBubble extends React.Component {
 
     submitMessage = (e) => {
         e.preventDefault();
+        console.log("message being submitted");
 
         if(e.target.messageBox.value){        
             this.props.socket.emit("remove typer", {
