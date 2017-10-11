@@ -313,6 +313,7 @@ class Consults extends React.Component {
 
 
 const mapStateToProps = (state, ownProps) => {
+    console.log("props in consults: ", state);
     return {
         userType: state.signInReducer.userType,
         consults: state.doctorReducer.consultRequests,

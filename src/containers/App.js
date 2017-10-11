@@ -65,6 +65,7 @@ class App extends React.Component {
 
 
 const mapStateToProps = (state, ownProps) => {
+    console.log("props in app: ", state);
     return {
         isAuth: state.signInReducer.userSession,
         user: state.signInReducer.user,

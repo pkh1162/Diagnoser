@@ -316,6 +316,7 @@ class ChatBubble extends React.Component {
 
 
 const mapStateToProps = (state, ownProps) => {
+    console.log("props in chatbubble: ", state);
     return {
         channel: state.chatBubbleReducer.channel,
         doctor: state.chatBubbleReducer.doctor,
