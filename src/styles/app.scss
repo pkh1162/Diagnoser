@@ -1,0 +1,36 @@
+
+@font-face {
+    font-family: redline;
+    src: url(../assets/fonts/redline.ttf);
+}
+
+
+* {
+    padding: 0px;
+    font-family: redline, sans-serif;
+    font-size: 18px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+#root {
+    overflow-x: hidden;
+    position: relative;
+}
+
+.overlayer {
+    background: black;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    opacity: 0.5;
+    transition:  0.7s all;
+}

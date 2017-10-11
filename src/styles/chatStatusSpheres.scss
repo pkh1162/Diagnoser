@@ -1,0 +1,118 @@
+@import "variables";
+@import "mixins";
+
+.chat-status-box {
+  text-align: center;
+
+
+    .chat-status-container {
+        @include flexIt(row, center, center);
+        width: 100%;
+        height: 90px;
+        border-radius: 2%;
+        padding: 0px;
+        position: relative;
+      }
+      
+      .connectingDot {
+        width: 100px;
+      }
+      
+      .status-sphere {
+        opacity: 1;
+        z-index: 1;
+        position: relative;
+        background: none;
+        border-radius: 100%;
+        border: 3px solid #5fbcd3;
+        padding: 0px;
+        margin: 0px;
+        width: 35px;
+        height: 35px;
+      }
+      
+      
+      
+      .tick-path {
+        stroke-opacity: 1;
+        stroke-dasharray: 138.5;
+        stroke-dashoffset: 0;
+        opacity: 0;
+      }
+
+      .connectIt {
+        -webkit-animation: connect 1s forwards;
+        animation: connect 1s forwards ease-in;
+        opacity: 1;
+      }
+      
+      
+      @-webkit-keyframes connect {
+        0% {
+          stroke-dashoffset: 158.5;
+        }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      
+      
+      .channel-status-bar {
+        display: inline-block;
+        border: none;
+        padding: 10px;
+        width: 90%;
+        color: $secondary;
+        font-size: 28px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 30px;
+      }
+
+
+      .lit {
+        transition: all 2s;
+        transition-delay: 1.3s;
+        background: lighten($primary, 10);
+        animation-name: pulse;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+        border: none;
+      }
+
+      @-webkit-keyframes pulse {
+        0% {
+          background: lighten($primary, 10);
+          box-shadow: 0px 0px 7px $primary;
+        }
+        50% {
+          background: lighten($primary, 10);
+        }
+        100% {
+          background: lighten($primary, 10);
+          box-shadow: 0px 0px 0px $primary;
+        }
+      }
+
+      .keepOn {
+        opacity: 1;
+      }
+
+      .channel-disconnect {
+        display: inline-block;
+        border: none;
+        padding: 10px;
+        width: 90%;
+        cursor: pointer;
+        color: white;
+        font-size: 14px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 5px;
+        position: relative;
+        z-index: 10;
+        background: $clickable;
+      }
+  }

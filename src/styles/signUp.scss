@@ -1,0 +1,183 @@
+@import "variables";
+@import "mixins";
+
+
+
+.signUpContainer {
+    height: auto;
+    margin-top: 30px;
+    @include flexIt(row, center, space-between);
+    position: relative;
+    
+    .localStrategy {
+      height: 100%;
+      width: 85%;
+      position: relative;
+      @include flexIt(row, space-around, center);
+      
+      .bigSphere {
+        background: lighten($primary, 30);
+        border: $primary solid 3px;
+        width: 450px;
+        height: 450px;
+        z-index: 0;
+        position: absolute;
+        top: 5%;
+        left: 10%;
+        border-radius: 100%;
+      }
+      
+      form {
+        @include flexIt(column, space-around, center);
+        height: 60%;
+        width: 90%;
+        
+        .formItemButton {
+          position: relative;
+          z-index: 10;
+          width: 80%;
+          height: 100px;
+          background: transparent;
+          text-align: right;
+          div {
+            display: inline-block;
+            width: 90px;
+            
+            background: $primary;
+            height: 5px;
+          }
+          input, button {
+            border-radius: 100%;
+            height: 70px;
+            width: 70px;
+            padding: 0px;
+            border: $primary 3px solid;
+            background: white;
+            color: $primary;
+            text-align: center;
+            transition: 1s all;
+            cursor: pointer;
+
+            &:hover {
+              background: $clickable;
+              border-radius: 20px;
+              border: none;
+              color: white;
+            }
+          }
+        }
+
+        @media only screen and (max-width: 650px) {
+          
+            .formItem {
+              width: 100% !important;
+              min-width: 300px !important;
+              flex-direction: column;
+            }
+            
+          }
+        
+        .formItem {
+          min-width: 500px;
+          background: transparent;
+          width: 80%;
+          margin: 20px;
+          position: relative;
+          z-index: 10;
+          display: flex;
+          
+          input {
+            height: auto;
+            width: 100%;
+            background: white;
+            padding: 10px;
+            color: $primary;
+            outline: none;
+            border: 2px solid $primary;
+
+            &:focus {
+              border: $clickable 2px solid;
+            }
+          }
+          
+          .formError {
+            position: relative;
+            z-index: 0;
+            padding: 15px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background: $secondary;
+            border-bottom-right-radius: 30px;
+
+            p {
+                color: white;
+            }
+          }  
+        }
+        
+      }
+    }
+    
+    .otherStrategy {
+      height: 300px;
+      width: 40%;
+      @include flexIt(row, space-around, center);
+      
+      .connectingLineSignIn {
+        height: 100%;
+        width: 40%;
+      }
+      .ballStrat {
+        width: 100px;
+        height: 100px;
+        border: $primary 3px solid;
+        border-radius: 100%;
+        text-align: center;
+        @include flexIt(row, center, center);
+
+        p {
+            color: $primary;
+            line-height: 20px;
+            width: 80%;
+        }
+        
+      }
+      
+      .passportStrats {
+        height: 100%;
+        width: 25%;
+        @include flexIt(column, space-around, "");
+        
+        .strat {
+          height: fit-content;
+          border: $primary 3px solid;
+          color: $primary;
+          padding: 10px;
+          text-align: center;
+          border-bottom-right-radius: 10px;
+          border-top-right-radius: 10px;
+          background: white;
+        }
+      }
+    }
+    
+  }
+  
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+

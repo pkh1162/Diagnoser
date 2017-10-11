@@ -1,0 +1,9 @@
+$primary: #5fbcd3;
+$secondary: darken($primary, 15);
+$active: #55d400;
+$inactive: #ff4d4d;
+$clickable: #ec6a13;
+$primer: transparentize($primary, .9);
+$primer2: transparentize($primary, .2);
+
+$tagBorder: 3px;

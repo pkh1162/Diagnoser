@@ -1,0 +1,59 @@
+@import "variables";
+@import "mixins";
+
+
+.footer {
+    height:150px;
+    border-top: 3px solid $clickable;
+    background: $secondary;
+    margin-top: 100px;
+    width: 100%;
+
+
+    display: flex;
+  
+
+
+    p {
+        flex: 1;
+        background: $secondary;
+        color: white;
+        font-size: 32px;
+        align-self: center;
+        text-align: center;
+        
+    }
+
+    div {
+        flex: 2;
+        background: $primary;
+        @include flexIt(row, space-around, center);
+
+        i {
+            font-size: 42px;
+            color: white;
+
+            transition: 0.7s all;
+            &:hover {
+                color: $clickable;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 650px) {
+    .footer {
+        p {
+            margin: 20px;
+        }
+
+        div {
+            flex-direction: column !important;
+
+            i {
+                font-size: 32px;
+            }
+        }
+    }
+}

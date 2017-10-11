@@ -1,0 +1,201 @@
+@import "variables";
+@import "mixins";
+
+
+.interviewContainer {
+  padding: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+  @include flexIt(row, space-evenly, "");
+  
+  .interview {
+    width: 40%;
+    min-width: 500px;
+    @include flexIt(column, "", center);
+    border-bottom-right-radius: 20px;
+    padding: 20px;
+    background: $secondary;
+    color: white;
+    
+    .question {
+      display: flex;
+      background: white;
+      color: $secondary;
+      width: 90%;
+      border: white 2px solid;
+      border-bottom-right-radius: 20px;
+      
+      p {
+        display: inline-block;
+        padding: 10px;
+        color: $secondary;
+      }
+      span {
+        background: darken($primary, 20);
+        color: white;
+        padding: 20px;
+        margin: 0px;
+        display: inline-block;
+      }
+    }
+    
+    .answers {
+      @include flexIt(column, space-around, center);
+      position: relative;
+      width: 100%;
+      margin: 10px;
+      
+      .answer {
+        margin: 10px;
+        padding: 10px;
+        width: 40%;
+        cursor: pointer;
+        background: white;
+        border: none;
+        border-radius: 3px;
+        align-self: flex-end;
+        color: $secondary;
+
+        transition: 0.5s all;
+        
+        &:hover {
+            background: $clickable;
+            color: white;   
+        }
+      }
+    }
+  }
+  
+  .results {
+    background: white;
+    width: 40%;
+    min-width: 500px;
+    @include flexIt(column, "", center);
+    padding: 20px;
+    position: relative;
+    
+    .diagnosisHeading {
+      width: 90%;
+      background: $secondary;
+      padding: 20px;
+      p {
+        color: white;
+      }
+      
+    }
+    
+    .diagnosisResults {
+      width: 90%;
+      height: 100%;
+      @include flexIt(row, center, "");
+      
+     
+      .resultContainer {
+        @include flexIt(column, "", center);
+        margin: 10px;
+        width: 90%;
+
+        button {
+          border: $primary solid 2px;
+          color: $primary;
+          padding: 10px;
+          width: 100%;
+          background: white;
+          align-self: flex-end;
+          transition: .5s all;
+
+          &:hover {
+            background: $clickable;
+            color: white;
+            border: $clickable solid 2px;
+          }
+        }
+
+        .diagnosisSaved {
+          width: 70px;
+          height: 70px;
+          border-radius: 100%;
+          background: $clickable;
+          color: white;
+          align-self: flex-end;
+          opacity: 0;
+          transition: 1s all;
+          margin-top: 10px;
+          text-align: center;
+          padding-top: 22px;
+          
+          i {
+            color: white; 
+            font-size: 28px;
+          }
+        }
+
+        .fadeIn {
+          opacity: 1;
+        }
+
+        div {
+            display: flex;
+            margin: 10px;
+            width: 100%;
+
+            p {
+                color: $secondary;
+                border: $secondary 2px solid;
+                padding: 10px;
+                width: 80%;
+              }
+        
+              span {
+                background: $secondary;
+                display: inline-block;
+                text-align: center;
+                border-top-right-radius: 10px;
+                padding: 10px;
+                width: 20%;
+                color: white;
+              }
+        }
+        
+      }
+      
+      
+      
+    }
+  }
+  
+  
+}
+
+
+
+
+
+@media only screen and (max-width: 650px) {
+  .interview, .results {
+    width: 90% !important;
+    min-width: 300px !important;
+  }
+
+  .answers {
+    .answer {
+      width: 60% !important;
+    }
+  }
+
+  .resultContainer {
+    div {
+      flex-direction: column !important;
+      p {
+        width: 100% !important;
+      }
+
+      span {
+        width: 100% !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 20px !important;
+      }
+    }
+  }
+
+}

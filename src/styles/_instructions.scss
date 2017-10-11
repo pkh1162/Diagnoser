@@ -1,0 +1,76 @@
+@import "variables";
+@import "mixins";
+
+.consultHelp {
+    min-width: 600px;
+    height: 100%;
+    flex: 3;
+    @include flexIt(column, "", center);
+    margin-top: 20px;
+
+    .helpItem {
+        width: 80%;
+        height: fit-content;
+        padding: 10px;
+        margin: 10px;
+        font-weight: normal;
+        @include flexIt(row, "", baseline);
+
+        .help-ball {
+            background: white;
+            border: 3px solid $primary;
+            color: $primary;
+            width: 30px;
+            height: 30px;
+            margin: 0px;
+            border-radius: 100%;
+            @include flexIt(row, center, center);
+        }
+
+        .help-info {
+            width: 90%;
+        }
+  
+    
+        h3 {
+            padding: 22px;
+            letter-spacing: 3px;
+            width: 80%;
+            font-size: 22px;
+            color: $secondary;
+            font-weight: normal;
+        }
+        
+        p {
+            padding: 10px;
+            border: $primary 3px solid;
+            margin-top: 5px;
+            color: $primary;
+            border-bottom-right-radius: 30px;
+            margin-left: 50px;
+            font-size: 20px;
+            font-weight: normal;
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: 650px) {
+    
+        .consultHelp {
+            min-width: 320px;
+            background: white;
+
+            .helpItem {
+                width: 90%;
+
+                p {
+                    margin-left: 0px;
+                }
+        
+            }
+        }
+
+    
+}

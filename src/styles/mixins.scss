@@ -1,0 +1,13 @@
+@mixin flexIt ($type, $justify, $align) {
+    display: flex;
+    flex-direction: $type;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+@mixin centerIt ($where) {
+    text-align: center;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+}

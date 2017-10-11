@@ -1,0 +1,132 @@
+@import "variables";
+@import "mixins";
+
+.shiftRight {
+    transform: translateX(-40px);
+    opacity: 0.4;
+    transition: 1s all;
+}
+
+
+.doctorTag {
+    transition: 1s all;
+    margin: 20px 0px;
+    width: 400px;
+    height: 100px;
+    background: none;
+    @include flexIt(row, center, center);
+    
+        .preLine {
+            width: 30%; 
+            height: 90%;
+            background: white;
+        }
+        line {
+            stroke-linecap: round;
+        }
+        .innerTag {
+            height: 80%;
+            background: white;
+            width: 80%;
+            border-top: $tagBorder solid $primary;
+            border-bottom: $tagBorder solid $primary;
+            display: flex;
+            
+            
+            .docName {
+                flex: 7;
+                margin: 10px;
+                background: none;
+                align-self: center;
+                font-size: 22px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                color: $secondary;
+            }
+
+            .lightUp {
+                color: $clickable;
+            }
+
+            .docInfo {
+                flex: 2;
+                background: none;
+                @include flexIt(column, "", "");
+                .docStatus {
+                    background: none;
+                    position: relative;
+                    width: 100%;
+                    flex: 1;
+                .statusIndicator {
+                   /* background: $inactive;*/
+                    height: 5px;
+                    width: 100%;
+                    margin: 3px 0px;
+                }
+                .statusInfo {
+                    margin: 3px 0px;
+                    letter-spacing: 3px;
+                    color: $primary;
+                    font-size: 12px;
+                    text-align: center;
+                    text-decoration: bold;
+                
+                    
+                }
+                .active {
+                    background: $active;
+                }
+                
+                .inactive {
+                    background: $inactive;
+                }
+                }
+                .docConnect {
+                    cursor: pointer;
+                    flex: 0.4;
+                    border: $secondary 2px solid;
+                    width: 100%;
+                    background: none;
+                    margin: 5px 0;
+                    padding: 4px;
+                    color: $secondary;
+                    transition: 0.5 all;
+
+                    &:hover {
+                        background: $clickable;
+                        color: white;
+                        border: $clickable 2px solid;
+                    }
+                }
+                .docConnect:disabled {
+                    cursor: not-allowed;
+                    &:hover {
+                        background: white;
+                        border: $secondary 2px solid;
+                        color: $secondary;
+                    }
+                }
+            }
+            
+            
+            }
+}
+
+
+
+
+
+@media only screen and (max-width: 435px) {
+
+    .doctorTag {
+        width: 90%; 
+        min-width: 300px       
+    }
+
+    .docName {
+        margin-right: 10px !important;
+        font-size: 18px !important;
+    }
+
+    
+}    

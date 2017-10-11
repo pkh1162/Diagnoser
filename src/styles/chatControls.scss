@@ -1,0 +1,83 @@
+@import "variables";
+@import "mixins";
+
+.chatTag {
+  width: 90%;
+  height: 100px;
+  position: relative;
+  @include flexIt(row, center, center);
+  margin: 20px auto 0px auto;
+  
+  .chatBox {
+    display: inline-block;
+    border: $secondary 3px solid;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    
+    button {
+      background: $primary;
+      color: white;
+      cursor: pointer;
+      outline: none;
+      border: $primary 1px solid;
+      margin: 0px;
+      width: 15%;
+
+      &:disabled {
+        cursor: not-allowed;
+        border: none;
+        background: $secondary;
+      }
+    }
+    
+    input {
+      width: 85%;
+      padding-left: 10px;
+    }
+  }
+  
+  .preLine {
+    width: 30%; 
+    height: 100%;
+    background: white;
+  }
+  
+  
+  .chatOptions {
+    border-top: $secondary 5px solid;
+    border-bottom: $secondary 5px solid;
+    width: 200px;
+    height: 100%;
+    @include flexIt(column, space-around, "");
+
+    .sendImage {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+    
+    button, label {
+      height: 40%;
+      background: white;
+      border: $primary 3px solid;
+      text-align: center;
+      cursor: pointer;
+      padding: 5px;
+      font-size: 14px;
+      color: $secondary;
+      
+    }
+    button:disabled, input:disabled + label{
+        background: $secondary;
+        cursor: not-allowed;
+    }
+  }
+}
+
+
+
+

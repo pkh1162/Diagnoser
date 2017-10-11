@@ -1,0 +1,57 @@
+@import "variables";
+
+.chatBubble {
+    width:500px;
+    min-height: 200px;
+    height: auto;
+    padding: 10px;
+    background: white;
+    border: $primary 3px solid;
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px;
+    transition: all 2s;
+
+    .chat-messages {
+        border: $primary 5px solid;
+        min-height: 60%;
+        max-height: 60%;
+        height: 200px;
+        background: white;
+        overflow-y: auto;
+        overflow-x: none;
+        transition: all 1s;
+        padding: 10px;
+        position: relative;        
+    } 
+}
+
+.slide-in {
+    transform: translateX(-500px);
+    padding: 20px;
+}
+
+.someoneTypes {
+    position: relative;
+    background: #5fbcd3;
+    border-bottom-right-radius: 30px;
+    min-height: 30px;
+    width: 60%;
+    padding: 5px 20px;
+    color: white;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 520px) and (min-width: 300px) {
+    .chatBubble {
+        width: 95vw;
+    }
+    
+    .slide-in {
+        transform: translateX(-95vw);
+    }
+
+}

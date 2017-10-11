@@ -1,0 +1,29 @@
+@import "variables";
+@import "mixins";
+
+
+
+.consults {
+    height: fit-content;
+    position: relative;
+    flex-wrap: wrap;
+    display: flex;
+
+    .right-bar {
+        position: absolute;
+        z-index: 5;
+        right: -5px;
+        top: -40px;
+        background: $clickable;
+        width: 5px;
+    }
+
+    .consultItems {
+        height: 100%; 
+        flex: 1;
+        margin-top: 25px;
+        @include flexIt(column, space-around, "");
+    }
+
+    @import "_instructions"; 
+}

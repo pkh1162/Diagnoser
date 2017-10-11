@@ -1,0 +1,120 @@
+@import "variables";
+@import "mixins";
+
+
+
+.imageContainer {
+    width: 100%;
+    height: auto;
+    margin: 5px 0px;
+    background: none;
+    position: relative;
+    text-align: center;
+    text-align: -webkit-center;
+   
+
+    p {
+        margin: 10px;
+        border: $secondary solid 2px;
+        width: 85%;
+        padding: 10px;
+        color: $secondary;
+
+        span {
+            color: $secondary;
+        }
+    }
+
+    img {
+        width: 60%;
+    }
+}
+
+.messageContainer {
+    width: 100%;
+    height: auto;
+    margin: 5px 0px;
+    background: none;
+    position: relative;
+    text-align: center;
+    
+    svg {
+    width: 90%;
+    height: 10px;
+    }
+    .messageStroke {
+      stroke-linecap: round;
+    }
+  
+      .messageBox {
+          @include flexIt(row, space-around, center);
+          display: inline-flex;
+          background: none;
+          width: 90%;
+          position: relative;
+            
+          .messageSender {
+              height: fit-content;
+              width: 30%;
+              border: $secondary 2px solid;
+              background: white;
+              margin: 0px 0;
+              padding: 5px;
+              font-size: 16px;
+              color: #329ab4;
+          }
+  
+          .message {
+              width: 60%;
+              background: darken(#f9f9f9, 5);
+              font-size: 18px;
+              line-height: 24px;
+              text-align: left;
+              padding: 10px;
+              color: $primary;
+              overflow-y: auto;
+              overflow-x: none;
+          }
+      
+      }
+  
+  
+  }
+  
+  
+
+
+  
+
+@media only screen and (max-width: 500px) {
+    .messageBox {
+        flex-wrap: wrap;
+
+
+        .messageSender, .message {
+            width: 90% !important;
+            margin: 5px !important;
+        }
+    }
+
+    .imageContainer {
+
+        
+        p {
+            margin: 10px auto;
+            border: $secondary solid 2px;
+            width: 90%;
+            padding: 10px;
+            color: $secondary;
+        }
+    
+        img {
+            width: 90%;
+        }
+    }
+    
+    .slide-in {
+        transform: translateX(-98vw);
+    }
+
+}

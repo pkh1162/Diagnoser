@@ -1,0 +1,127 @@
+@import "variables";
+@import "mixins";
+
+
+.small-nav {
+    display: none;
+}
+
+nav {
+    @include flexIt(row, space-between, center);
+    background: white;
+
+    .navoids {
+        @include flexIt(row, space-around, "");
+        margin: 5px 15px;
+        
+        
+        .active {
+            background: $clickable;
+        }
+
+        a {
+            border: none;
+            padding: 15px;
+            /*transform: skewX(0deg);*/
+            margin: 10px 3px;
+            font-size: 24px;
+            background: $secondary;
+            transition: 0.7s all;  
+            @include flexIt(row, center, center);
+
+         
+
+            &:hover {
+                background: $clickable;
+                border-radius: 0px;
+                border: none;
+                color: white;
+            }
+
+        }
+    
+        .big-nav {
+            /*transform: skewX(-0deg);*/
+            display: inline-block;
+            letter-spacing: 3px;
+            font-size: 24px;
+            color: white;         
+        }
+
+        .small-nav {
+            display: none;
+        }
+
+
+        
+        @media only screen and (max-width: 650px) {
+            
+                .big-nav {
+                    display: none;
+                }
+                .small-nav {
+                    display: inline-block;
+                    color: white;
+                    font-size: 24px;
+                }
+            
+        }
+
+
+       
+    }
+
+    .logoids{
+        display: inline-block;
+        position: relative;
+        margin: 0px 20px;
+        border: 2px $secondary solid;
+        outline: none;
+        transform: skewX(0deg);
+        border-bottom-left-radius: 20px;
+
+
+        transition: 0.7s all;            
+        &:hover {
+            background: $clickable;
+            border: 2px $clickable solid;
+            color: white;
+
+            span {
+                color: white;
+            }
+        }
+
+        .big-logoid {
+            display: block;
+            padding: 15px;
+            color: $secondary;
+            font-size: 24px;
+            letter-spacing: 3px;           
+        }
+
+        .small-logoid {
+            display: none;
+        }
+
+
+        @media only screen and (max-width: 650px) {
+            
+                .big-logoid {
+                    display: none;
+                }
+                .small-logoid {
+                    display: inline-block;
+                    color: $secondary;
+                    padding: 10px;
+                    font-size: 20px;
+                }
+            
+        }
+
+    }
+
+}
+
+
+
