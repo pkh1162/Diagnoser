@@ -97,7 +97,7 @@ class ChatBubble extends React.Component {
 
     submitMessage = (e) => {
         e.preventDefault();
-        console.log("message being submitted");
+        console.log("message being submitted real");
 
         if(e.target.messageBox.value){        
             this.props.socket.emit("remove typer", {
@@ -120,6 +120,7 @@ class ChatBubble extends React.Component {
 
     fakeChat = (e) => {
         e.preventDefault();
+        console.log("message being submitted fake");
 
         if(e.target.messageBox.value){            
             this.props.socket.emit("remove typer", {

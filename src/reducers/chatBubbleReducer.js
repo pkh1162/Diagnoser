@@ -26,6 +26,7 @@ const chatBubbleReducer = (state=defaultState, action) => {
         case LEAVE_CHAT: 
             return {...state, connection: false}
         case ADD_MESSAGE:
+            console.log("in add message, chatbubble reducer: ", action)
             return {...state, messages: [...state.messages, action]}
         case ADD_TYPER:
             let filteredTypers = state.typers.filter(x => {

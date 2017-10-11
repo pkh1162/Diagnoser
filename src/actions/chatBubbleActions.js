@@ -70,6 +70,7 @@ export const initRoom = (data) => {
 }
 
 export const addMessage = (data) => {
+    console.log("in add mesage action: ", data);
     return {
         type: ADD_MESSAGE,
         message: data.message,
