@@ -147,7 +147,7 @@ authController.logout = (req, res) => {
         //When doctor logs out, update user sockets
         ioio.io.sockets.emit("doctor leaving")
     }
-    
+    req.session={};
     /*
         Find user who wants to log out set their status to inactive and log them out.
     */
