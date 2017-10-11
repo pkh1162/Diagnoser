@@ -205,7 +205,7 @@ class ChatBubble extends React.Component {
         })
 
         this.props.close()
-       // this.props.clearMessages();
+        this.props.clearMessages();
         ///////////////////////////////////////////////
 
     }
