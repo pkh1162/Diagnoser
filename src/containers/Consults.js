@@ -7,7 +7,7 @@ import { addConsultRequest, removeConsultRequest, setPatientID} from "../actions
 //import  { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import {DoctorTag} from "../components/DoctorTag.js";
 import ChatBubble from "./ChatBubble.js";
-import {openClose, alterChannel, addMessage, initBubble, initRoom, fakeConnect} from "../actions/chatBubbleActions.js";
+import {openClose, alterChannel, clearMessages, addMessage, initBubble, initRoom, fakeConnect} from "../actions/chatBubbleActions.js";
 
 const io = require("socket.io-client");
 const socket = io();    //---prod
@@ -100,6 +100,8 @@ class Consults extends React.Component {
 
 
         socket.on("consult connection", (data) => {
+            this.props.clearMessages();
+
             this.props.alterChannel("connected");
             this.props.initRoom({
                 roomName: data.roomName,
@@ -331,6 +333,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
+
+        clearMessages: () => {
+            dispatch(clearMessages());
+        },
         addMessage: (data) => {
             dispatch(addMessage(data))
         },
